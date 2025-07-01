@@ -3,36 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wasim is Dancing!</title>
+  <title>Dancing Wasim</title>
   <style>
     body {
-      background: #111;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: #fff;
+      margin: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    .dance {
+    .wasim-container {
+      text-align: center;
+    }
+
+    .wasim {
       font-size: 5rem;
       font-weight: bold;
-      animation: dance 1s infinite alternate ease-in-out;
-      color: #00e5ff;
+      color: #00ffc3;
+      animation: dance 1s infinite ease-in-out, jump 1s infinite alternate, colorChange 3s infinite;
+      display: inline-block;
+      transform-origin: bottom center;
+    }
+
+    .smile {
+      font-size: 2rem;
+      margin-top: 10px;
+      animation: smileAnim 2s infinite alternate;
     }
 
     @keyframes dance {
-      0%   { transform: rotate(0deg) translateY(0px) scale(1); }
-      25%  { transform: rotate(-10deg) translateY(-10px) scale(1.1); }
-      50%  { transform: rotate(10deg) translateY(10px) scale(0.95); }
-      75%  { transform: rotate(-5deg) translateY(-5px) scale(1.05); }
-      100% { transform: rotate(5deg) translateY(5px) scale(1); }
+      0%   { transform: rotate(0deg); }
+      25%  { transform: rotate(-10deg); }
+      50%  { transform: rotate(10deg); }
+      75%  { transform: rotate(-5deg); }
+      100% { transform: rotate(5deg); }
+    }
+
+    @keyframes jump {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(-30px); }
+    }
+
+    @keyframes smileAnim {
+      0%   { transform: scale(1); color: #ffd700; }
+      100% { transform: scale(1.2); color: #ff4081; }
+    }
+
+    @keyframes colorChange {
+      0%   { color: #00ffc3; }
+      25%  { color: #ff6f61; }
+      50%  { color: #ffd700; }
+      75%  { color: #00e5ff; }
+      100% { color: #00ffc3; }
+    }
+
+    .music-note {
+      position: absolute;
+      font-size: 2rem;
+      color: #fff;
+      animation: floatUp 4s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        bottom: 0;
+        opacity: 0;
+        left: 50%;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 100%;
+        opacity: 0;
+        left: calc(50% + 30px);
+      }
     }
   </style>
 </head>
 <body>
-  <div class="dance">Wasim 💃</div>
+  <div class="wasim-container">
+    <div class="wasim">Wasim 💃</div>
+    <div class="smile">😊 Smiling & Dancing!</div>
+  </div>
+
+  <!-- Optional floating music notes -->
+  <div class="music-note" style="left: 40%;">🎵</div>
+  <div class="music-note" style="left: 60%; animation-delay: 2s;">🎶</div>
 </body>
 </html>
