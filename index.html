@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wasim is Dancing!</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .dance {
+      font-size: 5rem;
+      font-weight: bold;
+      animation: dance 1s infinite alternate ease-in-out;
+      color: #00e5ff;
+    }
+
+    @keyframes dance {
+      0%   { transform: rotate(0deg) translateY(0px) scale(1); }
+      25%  { transform: rotate(-10deg) translateY(-10px) scale(1.1); }
+      50%  { transform: rotate(10deg) translateY(10px) scale(0.95); }
+      75%  { transform: rotate(-5deg) translateY(-5px) scale(1.05); }
+      100% { transform: rotate(5deg) translateY(5px) scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="dance">Wasim 💃</div>
+</body>
+</html>
